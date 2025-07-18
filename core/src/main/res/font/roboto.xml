@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<font android:font="@font/roboto_black" android:fontWeight="900"
+    tools:targetApi="o" />
+    <font android:font="@font/roboto_blackitalic" android:fontStyle="italic" android:fontWeight="900"
+        tools:targetApi="o" />
+    <font android:font="@font/roboto_bold" android:fontWeight="700"
+        tools:targetApi="o" />
+    <font android:font="@font/roboto_bolditalic" android:fontStyle="italic" android:fontWeight="700"
+        tools:targetApi="o" />
+    <font android:font="@font/roboto_regular" android:fontWeight="400"
+        tools:targetApi="o" />
+    <font android:font="@font/roboto_medium" android:fontWeight="500"
+        tools:targetApi="o" />
+    <font android:font="@font/roboto_mediumitalic" android:fontStyle="italic"
+        android:fontWeight="500"
+        tools:targetApi="o" />
+    <font android:font="@font/roboto_thin" android:fontWeight="300"
+        tools:targetApi="o" />
+    <font android:font="@font/roboto_thinitalic" android:fontStyle="italic" android:fontWeight="300"
+        tools:targetApi="o" />
+</font-family>
