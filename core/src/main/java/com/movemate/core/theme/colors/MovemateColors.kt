@@ -8,6 +8,7 @@ object MovemateColors {
     val primary = Color(0xFF533b9c)
     val background = Color(0xFFfafafa)
     val white = Color(0xFFFFFFFF)
+    val onCard = Color(0xFFf9f2ff)
     val secondary = Color(0xFFf58625)
     val green = Color(0xFF35cc8b)
     val textColor = Color(0xFF949494)

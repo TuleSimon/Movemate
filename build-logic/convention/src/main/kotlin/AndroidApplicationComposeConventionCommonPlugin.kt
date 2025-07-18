@@ -108,6 +108,7 @@ internal fun Project.configureKotlinAndroidCommon(
         add("coreLibraryDesugaring", libs.findLibrary("android.desugarJdkLibs").get())
         add("implementation", project(":core"))
         add("implementation", project(":data"))
+        add("implementation", project(":shared"))
         add("ksp", libs.findLibrary("androidx.hilt.compiler").get())
         add("ksp", libs.findLibrary("hilt.android.compiler").get())
     }

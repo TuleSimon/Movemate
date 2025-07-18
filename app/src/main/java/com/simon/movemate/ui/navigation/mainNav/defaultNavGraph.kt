@@ -4,9 +4,12 @@ package com.simon.movemate.ui.navigation.mainNav
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionLayout
+import androidx.compose.animation.core.EaseIn
+import androidx.compose.animation.core.EaseInCubic
+import androidx.compose.animation.core.EaseInElastic
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.slideIn
-import androidx.compose.animation.slideOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,36 +20,57 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.IntOffset
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.movemate.home.presentation.screen.HomeScreen
 import com.movemate.shared.LocalSharedTransitionScope
+import com.movemate.shared.getSharedViewModel
 import com.movemate.shared.routes.CalculateRoute
 import com.movemate.shared.routes.HomeRoute
 import com.movemate.shared.routes.ProfileRoute
 import com.movemate.shared.routes.ShipmentRoute
+import com.movemate.shared.viewmodel.MoveMateSharedViewModel
+import com.movemate.shared.viewmodel.MovemateGlobalAppState
 import com.simon.movemate.ui.navigation.bottomNav.HomeBottomNavigation
+
+const val animationDuration = 300
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
 fun HomeBottomNavGraph(
-    navController: NavHostController
+    navController: NavHostController,
+    moveMateSharedViewModel: MoveMateSharedViewModel = getSharedViewModel()
 ) {
     SharedTransitionLayout(
         modifier = Modifier.background(Color.White),
     ) {
+        val sharedState =
+            moveMateSharedViewModel.moveMateAppState
+                .collectAsStateWithLifecycle(
+                    MovemateGlobalAppState()
+                ).value
+
         CompositionLocalProvider(
             LocalSharedTransitionScope provides this,
         ) {
             Scaffold(
                 bottomBar = {
                     AnimatedVisibility(
-                        visible = true,
-                        enter = slideIn(tween(10)) { IntOffset.Zero },
-                        exit = slideOut(
-                            tween(10),
-                        ) { IntOffset.Zero },
+                        visible = sharedState.showBottomNav,
+                        enter = slideInVertically(
+                            tween(
+                                animationDuration,
+                                easing = EaseInCubic
+                            )
+                        ) { it / 2 },
+                        exit = slideOutVertically(
+                            tween(
+                                animationDuration,
+                                easing = EaseIn
+                            )
+                        ) { it / 2 },
                     ) {
                         HomeBottomNavigation(navController)
                     }
@@ -64,9 +88,7 @@ fun HomeBottomNavGraph(
 
 
                         composable<HomeRoute>() {
-                            Box() {
-                                Text("")
-                            }
+                            HomeScreen()
                         }
 
                         composable<CalculateRoute>() {

@@ -7,6 +7,9 @@ object MovemateLightThemeLight : MovemateThemeColors {
     override val cardColor: Color
         get() = MovemateColors.white
 
+    override val onCardColor: Color
+        get() = MovemateColors.white
+
     override val bgColor: Color
         get() = MovemateColors.background
 
@@ -18,6 +21,9 @@ object MovemateLightThemeLight : MovemateThemeColors {
 
     override val primary: Color
         get() = MovemateColors.primary
+
+    override val secondary: Color
+        get() = MovemateColors.secondary
 
     override val textColorHeader: Color
         get() = MovemateColors.textColorHeader

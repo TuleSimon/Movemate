@@ -5,7 +5,6 @@ import androidx.compose.animation.core.EaseInBounce
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,7 +17,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -40,7 +38,6 @@ import com.movemate.shared.routes.HomeRoute
 import com.movemate.shared.routes.TopLevelRoute
 import com.simon.movemate.R
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun BottomNavMenuItem(
     modifier: Modifier = Modifier,
@@ -56,6 +53,9 @@ fun BottomNavMenuItem(
 
     var isPressed by remember { mutableStateOf(false) }
 
+    /**
+     * Scale animation for icons when pressed
+     */
     val scale by animateFloatAsState(
         targetValue = if (isPressed) 1.2f else 1f,
         animationSpec = tween(durationMillis = 150, easing = EaseInBounce),

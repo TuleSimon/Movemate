@@ -8,14 +8,32 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
 import com.movemate.core.theme.base.MovemateTheme
 import com.simon.movemate.ui.navigation.mainNav.HomeBottomNavGraph
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    var keepSplash = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen()
+
+        val splash = installSplashScreen()
+
+        splash.setKeepOnScreenCondition {
+            keepSplash
+        }
+        lifecycleScope.launch {
+            delay(1000)
+            keepSplash = false
+        }
         enableEdgeToEdge()
         setContent {
             MovemateTheme {

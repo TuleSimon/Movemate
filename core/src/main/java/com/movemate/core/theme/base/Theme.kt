@@ -11,12 +11,13 @@ import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalWindowInfo
+import androidx.compose.ui.unit.Dp
 import com.movemate.core.theme.colors.MovemateColors
-import com.movemate.core.theme.colors.MovemateDarkThemeColors
 import com.movemate.core.theme.colors.MovemateLightThemeLight
 import com.movemate.core.theme.colors.MovemateThemeColors
 import com.movemate.core.theme.responsiveness.LocalScaling
 import com.movemate.core.theme.responsiveness.ResponsivenessUtils
+import com.movemate.core.theme.responsiveness.wdp
 import com.movemate.core.theme.typography.MovemateTypography
 import com.movemate.core.theme.typography.MovemateTypographyImpl
 import com.movemate.core.theme.typography.movemateTypography
@@ -55,7 +56,7 @@ fun MovemateTheme(
         else -> MovemateLightColorScheme
     }
     val movemateColor = when {
-        darkTheme -> MovemateDarkThemeColors
+        darkTheme -> MovemateLightThemeLight
         else -> MovemateLightThemeLight
     }
 
@@ -71,6 +72,13 @@ fun MovemateTheme(
         )
     }
 }
+
+/**
+ *
+ */
+val defPadding: Dp
+    @Composable
+    get() = (16.wdp)
 
 val MaterialTheme.MovemateColors: MovemateThemeColors
     @Composable
