@@ -41,5 +41,7 @@ dependencyResolutionManagement {
 rootProject.name = "Movemate"
 include(":app")
 include(":data")
+include(":shared")
 include(":core")
- 
+include(":features")
+include(":features:home")

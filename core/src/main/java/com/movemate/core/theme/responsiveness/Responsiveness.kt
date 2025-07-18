@@ -16,20 +16,20 @@ import androidx.compose.ui.unit.sp
  * @param baseHeight The base height to scale from
  */
 data class ResponsivenessUtils(
-    val screenWidth: Int,
-    val screenHeight: Int,
+    val screenWidth: Float,
+    val screenHeight: Float,
     val baseWidth: Int = 360,
     val baseHeight: Int = 800
 ) {
     /**
      * The short dimension of the screen
      */
-    val shortDimension = minOf(screenWidth, screenHeight).toFloat()
+    val shortDimension = minOf(screenWidth, screenHeight)
 
     /**
      * The long dimension of the screen
      */
-    val longDimension = maxOf(screenWidth, screenHeight).toFloat()
+    val longDimension = maxOf(screenWidth, screenHeight)
 
     /**
      * Scale a size based on the screen width (the short dimension)
@@ -42,7 +42,7 @@ data class ResponsivenessUtils(
      * Scale a size based on the screen height (the long dimension)
      */
     fun verticalScale(size: Float): Float {
-        return (longDimension / baseHeight) * size.toFloat()
+        return (longDimension / baseHeight) * size
     }
 
     /**

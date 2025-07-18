@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Movemate</string>
+    <string name="home">Home</string>
+    <string name="calculate">Calculate</string>
+    <string name="shipment">Shipment</string>
+    <string name="profile">Profile</string>
 </resources>

@@ -9,7 +9,9 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalWindowInfo
+import com.movemate.core.theme.colors.MovemateColors
 import com.movemate.core.theme.colors.MovemateDarkThemeColors
 import com.movemate.core.theme.colors.MovemateLightThemeLight
 import com.movemate.core.theme.colors.MovemateThemeColors
@@ -21,12 +23,15 @@ import com.movemate.core.theme.typography.movemateTypography
 
 
 private val MovemateDarkColorScheme = darkColorScheme(
+    background = MovemateColors.background,
+    primary = MovemateColors.primary
 
 )
 
 // Define the light color scheme
 private val MovemateLightColorScheme = lightColorScheme(
-
+    background = MovemateColors.background,
+    primary = MovemateColors.primary
 )
 
 @Composable
@@ -36,11 +41,14 @@ fun MovemateTheme(
     content: @Composable () -> Unit,
 ) {
     val configuration = LocalWindowInfo.current.containerSize
+    val density = LocalDensity.current
     val scaling = remember(configuration) {
-        ResponsivenessUtils(
-            screenWidth = configuration.width,
-            screenHeight = configuration.height,
-        )
+        with(density) {
+            ResponsivenessUtils(
+                screenWidth = configuration.width.toDp().value,
+                screenHeight = configuration.height.toDp().value,
+            )
+        }
     }
     val colorScheme = when {
         darkTheme -> MovemateDarkColorScheme
@@ -74,7 +82,6 @@ val MaterialTheme.MovemateTypes: MovemateTypography
     @Composable
     @ReadOnlyComposable
     get() = LocalTypograhpyProvider.current
-
 
 
 val LocalColorsProvider = compositionLocalOf<MovemateThemeColors> {

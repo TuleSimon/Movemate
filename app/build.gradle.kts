@@ -96,6 +96,7 @@ android {
 dependencies {
     implementation(project(":data"))
     implementation(project(":core"))
+    implementation(project(":shared"))
     implementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)

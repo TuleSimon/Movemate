@@ -5,7 +5,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.LinearGradient
 
 interface MovemateThemeColors {
+    val primary: Color
     val isDark: Boolean
     val textColor:Color
+    val cardColor:Color
+    val bgColor:Color
     val textColorHeader:Color
 }
