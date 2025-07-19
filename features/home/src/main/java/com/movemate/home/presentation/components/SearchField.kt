@@ -2,9 +2,9 @@ package com.movemate.home.presentation.components
 
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.animateBounds
 import androidx.compose.animation.animateContentSize
-import androidx.compose.animation.core.FastOutLinearInEasing
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsFocusedAsState
@@ -34,6 +34,7 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.layout.LookaheadScope
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.movemate.core.theme.base.MovemateColors
@@ -45,6 +46,7 @@ import com.movemate.core.theme.responsiveness.wsp
 import com.movemate.home.R
 import com.movemate.shared.logger.MovemateLogger
 
+@OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
 fun MovemateSearchBar(
     modifier: Modifier = Modifier,
@@ -66,7 +68,7 @@ fun MovemateSearchBar(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .animateContentSize(tween(400, easing = FastOutLinearInEasing))
+            .animateContentSize ()
             .background(
                 color = MaterialTheme.MovemateColors.cardColor,
                 shape = RoundedCornerShape(100f)
@@ -145,8 +147,8 @@ fun MovemateSearchBar(
 @Composable
 fun PreviewMovemateSearchBar() {
     MovemateTheme {
-        MovemateSearchBar(
-            modifier = Modifier.padding(16.wdp)
-        )
+            MovemateSearchBar(
+                modifier = Modifier.padding(16.wdp)
+            )
     }
 }

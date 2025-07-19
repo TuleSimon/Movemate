@@ -7,9 +7,13 @@ import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.animation.core.EaseIn
 import androidx.compose.animation.core.EaseInCubic
 import androidx.compose.animation.core.EaseInElastic
+import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,6 +28,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.movemate.calculate.presentation.screen.CalculateScreen
 import com.movemate.home.presentation.screen.HomeScreen
 import com.movemate.shared.LocalSharedTransitionScope
 import com.movemate.shared.getSharedViewModel
@@ -35,7 +40,7 @@ import com.movemate.shared.viewmodel.MoveMateSharedViewModel
 import com.movemate.shared.viewmodel.MovemateGlobalAppState
 import com.simon.movemate.ui.navigation.bottomNav.HomeBottomNavigation
 
-const val animationDuration = 300
+const val animationDuration = 800
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
@@ -62,15 +67,15 @@ fun HomeBottomNavGraph(
                         enter = slideInVertically(
                             tween(
                                 animationDuration,
-                                easing = EaseInCubic
+                                easing = LinearOutSlowInEasing
                             )
-                        ) { it / 2 },
+                        ) { it } + fadeIn(tween(animationDuration)),
                         exit = slideOutVertically(
                             tween(
                                 animationDuration,
                                 easing = EaseIn
                             )
-                        ) { it / 2 },
+                        ) { it } + fadeOut(tween(animationDuration)),
                     ) {
                         HomeBottomNavigation(navController)
                     }
@@ -91,11 +96,15 @@ fun HomeBottomNavGraph(
                             HomeScreen()
                         }
 
-                        composable<CalculateRoute>() {
-                            Box() {
-                                Text("")
+                        composable<CalculateRoute>(
+                            enterTransition = { slideInVertically { it / 2 } + fadeIn() }
+                        ) {
+                            CalculateScreen {
+                                navController.navigateUp()
                             }
                         }
+
+
                         composable<ShipmentRoute>() {
                             Box() {
                                 Text("")

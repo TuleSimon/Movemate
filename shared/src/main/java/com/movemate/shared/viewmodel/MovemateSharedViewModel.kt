@@ -2,6 +2,7 @@ package com.movemate.shared.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.update
@@ -15,6 +16,7 @@ class MoveMateSharedViewModel @Inject constructor() : ViewModel() {
 
     val moveMateAppState = _moveMateAppState.onStart {
         if(!_moveMateAppState.value.showBottomNav) {
+            delay(600)
             handleAction(MoveMateActions.OpenBottomNavigation)
         }
     }

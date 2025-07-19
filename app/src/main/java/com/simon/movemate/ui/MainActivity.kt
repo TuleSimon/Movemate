@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
             keepSplash
         }
         lifecycleScope.launch {
-            delay(1000)
+            delay(400)
             keepSplash = false
         }
         enableEdgeToEdge()

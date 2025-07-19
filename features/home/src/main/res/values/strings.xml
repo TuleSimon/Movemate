@@ -2,4 +2,11 @@
 <resources>
     <string name="your_location">Your location</string>
     <string name="wertheimer_illinois">Wertheimer, Illinois</string>
+    <string name="shipment_number">Shipment Number</string>
+    <string name="nej200089934122231">NEJ200089934122231</string>
+    <string name="sender">Sender</string>
+    <string name="receiver">Receiver</string>
+    <string name="time">Time</string>
+    <string name="status">Status</string>
+    <string name="tracking">Tracking</string>
 </resources>

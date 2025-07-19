@@ -98,6 +98,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":shared"))
     implementation(project(":features:home"))
+    implementation(project(":features:calculate"))
     implementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)

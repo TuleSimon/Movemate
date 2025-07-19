@@ -58,7 +58,8 @@ fun BottomNavMenuItem(
      */
     val scale by animateFloatAsState(
         targetValue = if (isPressed) 1.2f else 1f,
-        animationSpec = tween(durationMillis = 150, easing = EaseInBounce),
+        animationSpec = tween(durationMillis = 250,
+            easing = EaseInBounce),
         label = "scaleAnimation"
     )
 
@@ -87,7 +88,7 @@ fun BottomNavMenuItem(
         Icon(
             painter = painterResource(item.icon),
             contentDescription = stringResource(item.name),
-            modifier = Modifier.size(24.wdp),
+            modifier = Modifier.size(18.wdp),
             tint = colorTint.value
         )
         Spacer(Modifier.height(5.hdp))
