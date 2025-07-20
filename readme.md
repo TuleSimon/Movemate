@@ -39,7 +39,7 @@ Check out a quick video demonstration and some screenshots of the Movemate app i
 ![Preview](screenshots/preview.gif)
 
 ### Download Preview
-[![Download the demo](screenshots/screenshot1.png)](https://drive.google.com/file/d/1bTtYohHfGhwhHJ4TBul6THScGcrwhe4-/view?usp=sharing)
+[![Download the demo]](https://drive.google.com/file/d/1bTtYohHfGhwhHJ4TBul6THScGcrwhe4-/view?usp=sharing)
 
 ### Screenshots
 
