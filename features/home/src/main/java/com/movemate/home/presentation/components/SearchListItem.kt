@@ -1,5 +1,6 @@
 package com.movemate.home.presentation.components
 
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -28,10 +29,10 @@ fun SearchListItems(
             containerColor = MaterialTheme.MovemateColors.cardColor
         ),
         shape = RoundedCornerShape(15.wdp),
-        modifier = modifier
+        modifier = modifier.fillMaxWidth()
     ) {
 
-        LazyColumn(Modifier.padding(defPadding)) {
+        LazyColumn(Modifier.padding(defPadding).fillMaxWidth()) {
             items(
                 mockShipmentData
                     .take(5)

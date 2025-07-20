@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -89,7 +90,7 @@ private fun AnimatedVisibilityScope.HomeScreenContent(
                                 })
             }) {
             if (it) {
-                SearchListItems(Modifier.fillMaxHeight(), query = state.query)
+                SearchListItems(Modifier.wrapContentHeight(), query = state.query)
             } else {
                 HomeScreenInitialContent(state.searchMode.not())
             }
