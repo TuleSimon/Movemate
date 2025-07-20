@@ -76,19 +76,19 @@ Movemate follows a clean, modular, and scalable architecture, adhering to best p
 The project is organized into a multi-module architecture to promote reusability, maintainability, and scalability:
 
 Movemate/
-├── app/                  # The main application module, orchestrating features.
-├── data/                 # Handles data sources, repositories, and data models.
-├── core/                 # Contains shared components like:
-│   ├── theme/            # Custom Material 3 themes, colors, typography, and responsiveness utils.
-│   └── ...               # Other core utilities.
-├── shared/               # Modules for sharing common logic and components across features.
-│   ├── utils/            # General utility functions.
-│   └── ...
-└── features/             # Contains independent feature modules:
-├── home/             # Home screen and related logic.
-├── calculate/        # Shipment calculation feature.
-├── shipment/         # Shipment tracking and management feature.
-└── ...
+- ├── app/                  # The main application module, orchestrating features.
+- ├── data/                 # Handles data sources, repositories, and data models.
+- ├── core/                 # Contains shared components like:
+- │   ├── theme/            # Custom Material 3 themes, colors, typography, and responsiveness utils.
+- │   └── ...               # Other core utilities.
+- ├── shared/               # Modules for sharing common logic and components across features.
+- │   ├── utils/            # General utility functions.
+- │   └── ...
+- └── features/             # Contains independent feature modules:
+- ├── home/             # Home screen and related logic.
+- ├── calculate/        # Shipment calculation feature.
+- ├── shipment/         # Shipment tracking and management feature.
+- └── ...
 
 
 ## Responsiveness
