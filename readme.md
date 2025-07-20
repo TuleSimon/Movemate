@@ -1,6 +1,6 @@
 # Movemate App
 
-![Movemate Logo Placeholder](https://placehold.co/150x150/000000/FFFFFF?text=Movemate)
+![Movemate Logo Placeholder](/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp)
 
 Welcome to **Movemate**, an Android application developed by Tule Simon as an assessment for Moniepoint. Movemate is designed to provide a seamless experience for managing shipments, calculating logistics, and more.
 
