@@ -37,6 +37,8 @@ fun SearchListItems(
                 .filter {
                     it.trackingNumber
                         .contains(query, true)
+                            ||   it.title
+                        .contains(query, true)
                 }
         }
 

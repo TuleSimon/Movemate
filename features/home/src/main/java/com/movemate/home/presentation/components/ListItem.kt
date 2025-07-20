@@ -2,6 +2,7 @@ package com.movemate.home.presentation.components
 
 import android.app.LauncherActivity
 import androidx.compose.animation.core.EaseInElastic
+import androidx.compose.animation.core.EaseInOut
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -42,7 +43,7 @@ fun LazyItemScope.ListItem(
     title: String,
     description: String,
 ) {
-    Column(Modifier.animateItem(tween(durationMillis = 400, easing = EaseInElastic))) {
+    Column(Modifier.animateItem(tween(durationMillis = 200, easing = EaseInOut))) {
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
