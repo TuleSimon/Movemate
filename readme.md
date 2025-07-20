@@ -36,8 +36,10 @@ Movemate is a modern Android application built with Kotlin and Jetpack Compose, 
 Check out a quick video demonstration and some screenshots of the Movemate app in action!
 
 ### Video Preview
+![Preview](screenshots/preview.gif)
 
-<video src="screenshots/preview.mp4" controls width="100%"></video>
+### Download Preview
+[![Download the demo](screenshots/screenshot1.png)](https://drive.google.com/file/d/1bTtYohHfGhwhHJ4TBul6THScGcrwhe4-/view?usp=sharing)
 
 ### Screenshots
 
