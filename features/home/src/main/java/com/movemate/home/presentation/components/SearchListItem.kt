@@ -9,6 +9,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.movemate.core.theme.base.MovemateColors
@@ -31,15 +32,17 @@ fun SearchListItems(
         shape = RoundedCornerShape(15.wdp),
         modifier = modifier.fillMaxWidth()
     ) {
+        val items = remember(query) {
+            mockShipmentData
+                .filter {
+                    it.trackingNumber
+                        .contains(query, true)
+                }
+        }
 
         LazyColumn(Modifier.padding(defPadding).fillMaxWidth()) {
             items(
-                mockShipmentData
-                    .take(5)
-                    .filter {
-                        it.trackingNumber
-                            .contains(query, true)
-                    },
+                items ,
                 key = { it.id }) {
                 ListItem(
                     it.title,

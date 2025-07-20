@@ -51,20 +51,5 @@ val mockShipmentData: List<ShipmentItem> = listOf(
         title = "Wireless headphones Pro",
         trackingNumber = "#NEJ99887766554433",
         route = "Japan → Sydney"
-    ),
-    ShipmentItem(
-        title = "Vintage leather suitcase",
-        trackingNumber = "#NEJ22114433665588",
-        route = "Spain → Mexico City"
-    ),
-    ShipmentItem(
-        title = "Smart home security kit",
-        trackingNumber = "#NEJ55667788990011",
-        route = "Germany → Toronto"
-    ),
-    ShipmentItem(
-        title = "Premium camping tent",
-        trackingNumber = "#NEJ33445566778899",
-        route = "USA → Canada"
     )
 )
