@@ -96,14 +96,13 @@ fun LazyItemScope.FreightItem(
 
                 LaunchedEffect(isListVisible) {
                     if(isListVisible){
-                        delay(100)
+                        delay(300)
                         shouldAnimate.value=true
                     }
                 }
 
                 this@Column.AnimatedVisibility(visible  = shouldAnimate.value,
                     enter = slideInHorizontally(tween(400,
-                        delayMillis = 300,
                         easing = EaseInOut)) { it }
                             + fadeIn(tween(400))
                 ) {

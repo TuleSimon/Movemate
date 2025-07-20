@@ -6,7 +6,6 @@ import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -34,7 +33,6 @@ import com.movemate.core.theme.base.MovemateTypes
 import com.movemate.core.theme.base.defPadding
 import com.movemate.core.theme.responsiveness.wdp
 import com.movemate.shared.LocalSharedTransitionScope
-import com.movemate.shared.viewmodel.MoveMateActions
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalSharedTransitionApi::class)
@@ -78,6 +76,7 @@ fun AnimatedVisibilityScope.TopAppBar(
                         Icon(
                             painterResource(R.drawable.outline_arrow_back_ios_24),
                             modifier = Modifier.size(20.wdp),
+                            tint = MaterialTheme.MovemateColors.cardColor,
                             contentDescription = null
                         )
                     }

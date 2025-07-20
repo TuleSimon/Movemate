@@ -5,6 +5,8 @@ data class CalculateScreenState(
     val receiverLocation: String = "",
     val weight: String = "",
     val box: String = "",
+    val showSuccess: Boolean = false,
+    val selectedCategory: String = "",
     val categories: List<String> = listOf(
         "Document", "Glass", "Liquid", "Food", "Electronic", "Product", "Others"
     )

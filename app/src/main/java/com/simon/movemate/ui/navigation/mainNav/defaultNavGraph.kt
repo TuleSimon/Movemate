@@ -29,6 +29,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.movemate.calculate.presentation.screen.CalculateScreen
+import com.movemate.calculate.presentation.screen.CalculateSuccessContent
 import com.movemate.home.presentation.screen.HomeScreen
 import com.movemate.shared.LocalSharedTransitionScope
 import com.movemate.shared.getSharedViewModel
@@ -36,6 +37,7 @@ import com.movemate.shared.routes.CalculateRoute
 import com.movemate.shared.routes.HomeRoute
 import com.movemate.shared.routes.ProfileRoute
 import com.movemate.shared.routes.ShipmentRoute
+import com.movemate.shared.routes.SuccessRoute
 import com.movemate.shared.viewmodel.MoveMateSharedViewModel
 import com.movemate.shared.viewmodel.MovemateGlobalAppState
 import com.simon.movemate.ui.navigation.bottomNav.HomeBottomNavigation
@@ -92,15 +94,19 @@ fun HomeBottomNavGraph(
                     ) {
 
 
-                        composable<HomeRoute>() {
+                        composable<HomeRoute>(
+                            enterTransition = { slideInVertically { -(it / 2) } + fadeIn() }
+                        ) {
                             HomeScreen()
                         }
 
                         composable<CalculateRoute>(
                             enterTransition = { slideInVertically { it / 2 } + fadeIn() }
                         ) {
-                            CalculateScreen {
+                            CalculateScreen(onNavigateBack = {
                                 navController.navigateUp()
+                            }) {
+                                navController.navigate(it)
                             }
                         }
 
@@ -113,6 +119,15 @@ fun HomeBottomNavGraph(
                         composable<ProfileRoute>() {
                             Box() {
                                 Text("")
+                            }
+                        }
+
+                        composable<SuccessRoute>(
+                            enterTransition = { slideInVertically { it / 2 } + fadeIn() },
+                            exitTransition = { slideOutVertically { it / 2 } + fadeOut() },
+                        ) {
+                            CalculateSuccessContent {
+                                navController.navigate(HomeRoute)
                             }
                         }
 

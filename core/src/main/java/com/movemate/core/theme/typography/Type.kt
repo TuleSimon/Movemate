@@ -26,6 +26,23 @@ val rubik = FontFamily(
     Font(R.font.rubik_semibold_italic, FontWeight.Normal,FontStyle.Italic),
 )
 
+val roboto = FontFamily(
+    Font(R.font.roboto, FontWeight.Normal),
+    Font(R.font.roboto_black, FontWeight.Black),
+    Font(R.font.roboto_blackitalic, FontWeight.Black, FontStyle.Italic),
+    Font(R.font.roboto_bold, FontWeight.Bold),
+    Font(R.font.roboto_bolditalic, FontWeight.Bold, FontStyle.Italic),
+    Font(R.font.roboto_bold, FontWeight.ExtraBold),
+    Font(R.font.roboto_bolditalic, FontWeight.ExtraBold, FontStyle.Italic),
+    Font(R.font.roboto_italic, FontWeight.Normal),
+    Font(R.font.roboto_light, FontWeight.Normal, FontStyle.Normal),
+    Font(R.font.roboto_lightitalic, FontWeight.Normal, FontStyle.Italic),
+    Font(R.font.roboto_medium, FontWeight.Medium),
+    Font(R.font.roboto_mediumitalic, FontWeight.Medium, FontStyle.Italic),
+    Font(R.font.roboto_bold, FontWeight.SemiBold),
+    Font(R.font.roboto_italic, FontWeight.Normal,FontStyle.Italic),
+)
+
 val baseRubTextStyle = TextStyle(
     fontFamily = rubik,
 )

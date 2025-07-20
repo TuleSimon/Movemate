@@ -1,6 +1,7 @@
 package com.movemate.calculate.presentation.viewModels
 
 import androidx.lifecycle.ViewModel
+import com.movemate.shared.logger.MovemateLogger
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -20,6 +21,11 @@ class CalculateScreenViewModel @Inject constructor() : ViewModel() {
                 _calculateScreenState.update { it.copy(senderLocation = action.input) }
             }
 
+            is CalculateScreenAction.UpdateSelectedCategory -> {
+                MovemateLogger.d("Updating Category ${action.input}")
+                _calculateScreenState.update { it.copy(selectedCategory = action.input) }
+            }
+
             is CalculateScreenAction.UpdateReceiverLocation -> {
                 _calculateScreenState.update { it.copy(receiverLocation = action.input) }
             }
@@ -30,6 +36,14 @@ class CalculateScreenViewModel @Inject constructor() : ViewModel() {
 
             is CalculateScreenAction.UpdateBox -> {
                 _calculateScreenState.update { it.copy(box = action.input) }
+            }
+
+            CalculateScreenAction.OnCalculate -> {
+                _calculateScreenState.update { it.copy(showSuccess = true) }
+            }
+
+            CalculateScreenAction.OnBackPress -> {
+                _calculateScreenState.update { it.copy(showSuccess = false) }
             }
         }
     }

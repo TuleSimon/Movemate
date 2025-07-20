@@ -22,3 +22,6 @@ object ShipmentRoute
 
 @Serializable
 object ProfileRoute
+
+@Serializable
+object SuccessRoute
