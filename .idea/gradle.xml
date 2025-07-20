@@ -30,6 +30,7 @@
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/calculate" />
             <option value="$PROJECT_DIR$/features/home" />
+            <option value="$PROJECT_DIR$/features/shipment" />
             <option value="$PROJECT_DIR$/shared" />
           </set>
         </option>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="what_are_you_sending">What are you sending</string>
+    <string name="box">Box</string>
+    <string name="packaging">Packaging</string>
+    <string name="approx_weight">Approx Weight</string>
+    <string name="receiver_location">Receiver Location</string>
+    <string name="sender_location">Sender Location</string>
+    <string name="destination">Destination</string>
+    <string name="calculate">Calculate</string>
+    <string name="back_to_home">Back to home</string>
+    <string name="this_amount_is_estimated_this_will_vary_if_you_change_your_location_or_weight">This amount is estimated this will vary if you change your location or weight</string>
+    <string name="usd">" USD"</string>
+    <string name="total_estimated_amount">Total Estimated Amount</string>
+    <string name="shipment_history">Shipment History</string>
+    <string name="shipments">Shipments</string>
+</resources>

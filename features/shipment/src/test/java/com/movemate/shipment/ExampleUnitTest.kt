@@ -1,4 +1,4 @@
-package com.movemate.home
+package com.movemate.shipment
 
 import org.junit.Test
 

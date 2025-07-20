@@ -40,6 +40,7 @@ import com.movemate.shared.routes.ShipmentRoute
 import com.movemate.shared.routes.SuccessRoute
 import com.movemate.shared.viewmodel.MoveMateSharedViewModel
 import com.movemate.shared.viewmodel.MovemateGlobalAppState
+import com.movemate.shipment.presentation.screen.ShipmentScreen
 import com.simon.movemate.ui.navigation.bottomNav.HomeBottomNavigation
 
 const val animationDuration = 800
@@ -111,9 +112,12 @@ fun HomeBottomNavGraph(
                         }
 
 
-                        composable<ShipmentRoute>() {
-                            Box() {
-                                Text("")
+                        composable<ShipmentRoute>(
+                            enterTransition = { slideInVertically { it / 2 } + fadeIn() },
+                            exitTransition = { slideOutVertically { it / 2 } + fadeOut() }
+                        ) {
+                            ShipmentScreen{
+                                navController.navigateUp()
                             }
                         }
                         composable<ProfileRoute>() {

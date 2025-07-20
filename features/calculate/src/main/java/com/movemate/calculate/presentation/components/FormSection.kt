@@ -107,7 +107,7 @@ fun AnimatedVisibilityScope.FormSection(
                 })
                 Spacer(Modifier.height(10.hdp))
                 CustomTextField(state.receiverLocation, {
-                    onAction(CalculateScreenAction.UpdateSenderLocation(it))
+                    onAction(CalculateScreenAction.UpdateReceiverLocation(it))
                 }, stringResource(R.string.receiver_location), {
                     Icon(
                         painter = painterResource(R.drawable.icon_download),
@@ -118,7 +118,7 @@ fun AnimatedVisibilityScope.FormSection(
                 })
                 Spacer(Modifier.height(10.hdp))
                 CustomTextField(state.weight, {
-                    onAction(CalculateScreenAction.UpdateSenderLocation(it))
+                    onAction(CalculateScreenAction.UpdateWeight(it))
                 }, stringResource(R.string.approx_weight), {
                     Icon(
                         painter = painterResource(R.drawable.icon_scale),
